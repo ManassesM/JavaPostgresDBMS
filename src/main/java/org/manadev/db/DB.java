@@ -15,9 +15,11 @@ public class DB {
         if (conn == null) {
             try {
                 Properties props = loadProperties();
+
                 String url = props.getProperty("DB_URL");
                 props.setProperty("user", props.getProperty("DB_USER"));
                 props.setProperty("password", props.getProperty("DB_PASSWORD"));
+
                 conn = DriverManager.getConnection(url, props);
             } catch (SQLException e) {
                 throw new DbException(e.getMessage());
@@ -25,24 +27,4 @@ public class DB {
         }
         return conn;
     }
-
-    public static void closeConnection() {
-        if (conn != null) {
-            try {
-                conn.close();
-            } catch (SQLException e) {
-                throw new DbException(e.getMessage());
-            }
-        }
-    }
-
-    //    private void getConnection(String dbName, String username, String password) {
-    //        String url = props.getProperty("url") + dbName;
-    //        try {
-    //            connection = DriverManager.getConnection(url, username, password);
-    //            System.out.println("Connected!");
-    //        } catch (SQLException e) {
-    //            throw new RuntimeException(e);
-    //        }
-    //    }
 }

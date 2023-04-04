@@ -1,4 +1,4 @@
-package org.manadev.implementation;
+package org.manadev.repositories;
 
 import org.manadev.db.DbException;
 import org.manadev.db.Utils;
@@ -12,26 +12,14 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserDAOJDBC implements UserDAO {
+public class UserRepositoryJDBC implements UserDAO {
 
-    private Connection conn;
+    private final Connection conn;
 
-    public UserDAOJDBC(Connection conn) {
+    public UserRepositoryJDBC(Connection conn) {
         this.conn = conn;
     }
 
-    @Override
-    public void insert(User obj) {
-
-    }
-    @Override
-    public void deleteById(Integer id) {
-
-    }
-    @Override
-    public User findById(Integer id) {
-        return null;
-    }
     @Override
     public List<User> findAll() {
         List<User> users = new ArrayList<>();

@@ -11,6 +11,7 @@ import static org.manadev.utils.StringFactory.printValue;
 public class UserService {
 
     UserDAO userDAO = DAOFactory.createUserDAO();
+
     public void listAll() {
         List<User> users = userDAO.findAll();
 
