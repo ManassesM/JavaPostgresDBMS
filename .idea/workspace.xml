@@ -4,11 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbc9975e-e40d-4b2e-bbf5-cc7149bb8f53" name="Changes" comment="" />
+    <list default="true" id="cbc9975e-e40d-4b2e-bbf5-cc7149bb8f53" name="Changes" comment="project set">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/manadev/db/DB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/manadev/db/DbException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/manadev/db/Utils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/manadev/implementation/UserDAOJDBC.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/manadev/model/dao/DAOFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/manadev/model/dao/UserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/manadev/model/entities/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/manadev/prompt/Start.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/manadev/services/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/manadev/utils/StringFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/manadev/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manadev/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/manadev/AppTest.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="2NxrL82lxLGYMifA3qV7y5wQqFm" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -18,10 +44,27 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Notification.DisplayName-DoNotAsk-WindowsDefender": "Microsoft Defender configuration",
+    "Notification.DoNotAsk-WindowsDefender": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/manaa/OneDrive/Área de Trabalho/WS/ws-java-intellij/JavaPostgresDBMS/src/main/resources",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.sourceCode.Java"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\manaa\OneDrive\Área de Trabalho\WS\ws-java-intellij\JavaPostgresDBMS\src\main\resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\manaa\OneDrive\Área de Trabalho\WS\ws-java-intellij\JavaPostgresDBMS\src\main\resources" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -31,6 +74,18 @@
       <option name="presentableId" value="Default" />
       <updated>1680616515845</updated>
     </task>
+    <task id="LOCAL-00001" summary="project set">
+      <created>1680616741084</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1680616741084</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="project set" />
+    <option name="LAST_COMMIT_MESSAGE" value="project set" />
   </component>
 </project>
