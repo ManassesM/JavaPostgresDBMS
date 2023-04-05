@@ -1,5 +1,8 @@
 package org.manadev.utils;
 
+import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+import java.sql.SQLException;
 import java.util.Random;
 
 public class StringFactory {
@@ -32,5 +35,11 @@ public class StringFactory {
         long timestamp = System.currentTimeMillis();
         int randomInt = random.nextInt(1000000);
         return (int) (timestamp * 1000000 + randomInt);
+    }
+
+    public static void printConnectionData(Connection conn) throws SQLException {
+        DatabaseMetaData metadata = conn.getMetaData();
+        String block = String.format("URL: %s\n  User: %s", metadata.getURL(), metadata.getUserName());
+        printValue(block);
     }
 }

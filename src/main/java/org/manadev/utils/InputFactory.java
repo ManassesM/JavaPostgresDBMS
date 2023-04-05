@@ -1,5 +1,6 @@
 package org.manadev.utils;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import static org.manadev.utils.StringFactory.exitingPrompt;
@@ -7,13 +8,16 @@ import static org.manadev.utils.StringFactory.exitingPrompt;
 public class InputFactory {
     static Scanner sc = new Scanner(System.in);
 
-    public static <T> T getInputValue(Class<T> type) {
+    public static <T> T getInputValue(Class<T> type) throws InputMismatchException {
         while (true) {
             System.out.print("Input: ");
 
             try {
-                String input = sc.next();
+                String input = sc.nextLine();
+                if (input.equals("quit prompt")) throw new InputMismatchException("Returning...");
                 return castType(type, input);
+            } catch (InputMismatchException e) {
+                throw new InputMismatchException(e.getMessage());
             } catch (NumberFormatException e) {
                 System.out.println("Invalid input. Please enter a value of type " + type.getSimpleName());
             } catch (ClassCastException e) {

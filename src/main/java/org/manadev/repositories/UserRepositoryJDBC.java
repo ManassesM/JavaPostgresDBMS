@@ -1,5 +1,6 @@
 package org.manadev.repositories;
 
+import org.manadev.db.DB;
 import org.manadev.db.DbException;
 import org.manadev.db.Utils;
 import org.manadev.model.dao.UserDAO;
@@ -11,6 +12,9 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
+
+import static org.manadev.db.Utils.loadProperties;
 
 public class UserRepositoryJDBC implements UserDAO {
 
@@ -21,7 +25,7 @@ public class UserRepositoryJDBC implements UserDAO {
     }
 
     @Override
-    public List<User> findAll() {
+    public List<User> findAll() throws DbException {
         List<User> users = new ArrayList<>();
         Statement st = null;
         ResultSet rs = null;
@@ -47,8 +51,9 @@ public class UserRepositoryJDBC implements UserDAO {
             Utils.closeResultSet(rs);
         }
     }
+
     @Override
-    public void createUser(User obj) {
+    public void createUser(User obj) throws DbException {
         String sql = "CREATE ROLE " + obj.getUsername() + " WITH LOGIN NOSUPERUSER NOINHERIT " + obj.isCreateDb() + " NOCREATEROLE NOREPLICATION PASSWORD '" + obj.getPassword() + "'";
         Statement st = null;
 
@@ -60,5 +65,12 @@ public class UserRepositoryJDBC implements UserDAO {
         } finally {
             Utils.closeStatement(st);
         }
+    }
+
+    @Override
+    public void connect(String username, String password) throws DbException {
+        Properties props = loadProperties();
+
+        DB.getConnection(props.getProperty("DB_URL") + "postgres", username, password);
     }
 }

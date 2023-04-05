@@ -18,9 +18,9 @@ public class Start {
 
             switch (option) {
                 case 0 -> userOptions();
-                case 1 -> service.listAll(); // list all existing users
-                case 2 -> service.createUser(); // createUser();
-                case 3 -> System.out.println("connect user"); // connect();
+                case 1 -> service.listAll();
+                case 2 -> service.createUser();
+                case 3 -> service.connect();
                 default -> flag = quitPrompt();
             }
         } while (flag);

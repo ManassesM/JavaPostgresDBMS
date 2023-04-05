@@ -26,17 +26,12 @@ public class User implements Serializable {
     public String getUsername() {
         return username;
     }
-    public int getUserId() {
-        return userId;
-    }
+
     public String isCreateDb() {
         return createDb ? "CREATEDB" : "NOCREATEDB";
     }
     public String getPassword() {
         return password;
-    }
-    public void setPassword(String password) {
-        this.password = password;
     }
     @Override
     public boolean equals(Object o) {
@@ -53,6 +48,7 @@ public class User implements Serializable {
 
     @Override
     public String toString() {
-        return "User: " + username + "\nID: " + userId + "\nCreate Database: " + createDb;
+        return String.format("User:\t\t%s %nID:\t\t\t%d %nCreate DB:\t%b %n-%n", username, userId, createDb);
+
     }
 }

@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbc9975e-e40d-4b2e-bbf5-cc7149bb8f53" name="Changes" comment="factories added">
+    <list default="true" id="cbc9975e-e40d-4b2e-bbf5-cc7149bb8f53" name="Changes" comment="create user">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/manadev/db/DB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manadev/db/DB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/manadev/model/dao/DAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manadev/model/dao/DAOFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/manadev/model/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manadev/model/dao/UserDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/manadev/model/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manadev/model/entities/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/manadev/prompt/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manadev/prompt/Start.java" afterDir="false" />
@@ -135,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680645103626</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="create user">
+      <created>1680712863200</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1680712863200</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -153,30 +162,7 @@
     <MESSAGE value="project set" />
     <MESSAGE value="listAll users" />
     <MESSAGE value="factories added" />
-    <option name="LAST_COMMIT_MESSAGE" value="factories added" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/org/manadev/prompt/Start.java</url>
-          <line>11</line>
-          <properties class="org.manadev.prompt.Start" method="startPrompt">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/org/manadev/services/UserService.java</url>
-          <line>26</line>
-          <properties class="org.manadev.services.UserService" method="createUser">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="create user" />
+    <option name="LAST_COMMIT_MESSAGE" value="create user" />
   </component>
 </project>
