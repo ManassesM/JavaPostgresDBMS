@@ -28,10 +28,17 @@ public class UserService {
 
     public void createUser() {
         System.out.println("Quit at any time by typing 'quit prompt'");
+
         try {
+            List<User> users = userDAO.findAll();
 
             System.out.println("Username");
             String username = InputFactory.getInputValue(String.class);
+
+            for (User user : users) {
+                if (user.getUsername().contains(username))
+                    throw new InputMismatchException("User with this name already exists!");
+            }
 
             System.out.println("Password");
             String password = InputFactory.getInputValue(String.class);
@@ -50,14 +57,16 @@ public class UserService {
         }
     }
 
-    public void connect() {
-        List<User> users = userDAO.findAll();
-
-        System.out.println("Username");
-        String username = InputFactory.getInputValue(String.class);
-
+    public boolean connect() {
         boolean foundUser = false;
+        System.out.println("Quit at any time by typing 'quit prompt'");
+
         try {
+            List<User> users = userDAO.findAll();
+
+            System.out.println("Username");
+            String username = InputFactory.getInputValue(String.class);
+
             for (User user : users) {
                 if (user.getUsername().equals(username)) {
                     System.out.println("Password");
@@ -69,10 +78,13 @@ public class UserService {
                 }
             }
             if (!foundUser) printValue("User " + username + " not found!");
+        } catch (InputMismatchException e) {
+            System.out.println(e.getMessage());
         } catch (SQLException e) {
             System.out.println("Something went wrong while retrieving data from Connection!\n" + e.getMessage());
         } catch (RuntimeException e) {
             System.out.println("Something went wrong while connecting to database!\n" + e.getMessage());
         }
+        return foundUser;
     }
 }

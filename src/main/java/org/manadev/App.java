@@ -1,6 +1,6 @@
 package org.manadev;
 
-import org.manadev.prompt.Start;
+import org.manadev.prompt.StartPrompt;
 
 /**
  * Hello world!
@@ -8,6 +8,6 @@ import org.manadev.prompt.Start;
 public class App {
     public static void main(String[] args) {
 
-        new Start().startPrompt();
+        new StartPrompt().startPrompt();
     }
 }

@@ -30,9 +30,11 @@ public class User implements Serializable {
     public String isCreateDb() {
         return createDb ? "CREATEDB" : "NOCREATEDB";
     }
+
     public String getPassword() {
         return password;
     }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

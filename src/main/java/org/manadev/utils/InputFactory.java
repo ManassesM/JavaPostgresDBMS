@@ -3,7 +3,7 @@ package org.manadev.utils;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import static org.manadev.utils.StringFactory.exitingPrompt;
+import static org.manadev.utils.StringFactory.printValue;
 
 public class InputFactory {
     static Scanner sc = new Scanner(System.in);
@@ -26,10 +26,10 @@ public class InputFactory {
         }
     }
 
-    public static boolean quitPrompt() {
+    public static boolean quitPrompt(String msg) {
         System.out.println("Do you want to quit (Y / N)?");
         char answer = getInputValue(Character.class);
-        if (answer == 'y') exitingPrompt();
+        if (answer == 'y') printValue(msg);
         return answer != 'y';
     }
 

@@ -25,9 +25,15 @@ public class StringFactory {
                                  """);
     }
 
-    public static void exitingPrompt() {
-        System.out.println("Exiting prompt...");
-        printValue("Thank you for using JAVA Postgres DBMS");
+    public static void databaseOptions() {
+        System.out.print("""
+                                 0. Show options
+                                 1. List databases
+                                 2. Create new database
+                                 3. Delete database
+                                 4. Update database
+                                 5. Quit
+                                 """);
     }
 
     public static int generateId() {
