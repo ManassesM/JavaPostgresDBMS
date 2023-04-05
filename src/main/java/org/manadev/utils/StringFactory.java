@@ -1,5 +1,7 @@
 package org.manadev.utils;
 
+import java.util.Random;
+
 public class StringFactory {
 
     public static void printValue(String value) {
@@ -23,5 +25,12 @@ public class StringFactory {
     public static void exitingPrompt() {
         System.out.println("Exiting prompt...");
         printValue("Thank you for using JAVA Postgres DBMS");
+    }
+
+    public static int generateId() {
+        Random random = new Random();
+        long timestamp = System.currentTimeMillis();
+        int randomInt = random.nextInt(1000000);
+        return (int) (timestamp * 1000000 + randomInt);
     }
 }

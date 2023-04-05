@@ -47,4 +47,18 @@ public class UserRepositoryJDBC implements UserDAO {
             Utils.closeResultSet(rs);
         }
     }
+    @Override
+    public void createUser(User obj) {
+        String sql = "CREATE ROLE " + obj.getUsername() + " WITH LOGIN NOSUPERUSER NOINHERIT " + obj.isCreateDb() + " NOCREATEROLE NOREPLICATION PASSWORD '" + obj.getPassword() + "'";
+        Statement st = null;
+
+        try {
+            st = conn.createStatement();
+            st.execute(sql);
+        } catch (SQLException e) {
+            throw new DbException(e.getMessage());
+        } finally {
+            Utils.closeStatement(st);
+        }
+    }
 }

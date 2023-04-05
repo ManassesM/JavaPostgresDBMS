@@ -9,7 +9,7 @@ public class InputFactory {
 
     public static <T> T getInputValue(Class<T> type) {
         while (true) {
-            System.out.print("Choose an option: ");
+            System.out.print("Input: ");
 
             try {
                 String input = sc.next();

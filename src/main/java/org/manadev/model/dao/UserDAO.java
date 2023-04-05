@@ -7,4 +7,6 @@ import java.util.List;
 public interface UserDAO {
     List<User> findAll();
 
+    void createUser(User obj);
+
 }
