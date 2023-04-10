@@ -20,7 +20,7 @@ public class DatabasePrompt {
             switch (option) {
                 case 0 -> databaseOptions();
                 case 1 -> service.listAll();
-                case 2 -> System.out.println("createDB");
+                case 2 -> service.createDatabase();
                 case 3 -> System.out.println("deleteDB");
                 case 4 -> System.out.println("updateDB");
                 default -> flag = quitPrompt("Returning to user prompt...");

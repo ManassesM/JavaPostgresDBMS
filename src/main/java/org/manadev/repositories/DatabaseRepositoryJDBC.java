@@ -21,21 +21,20 @@ public class DatabaseRepositoryJDBC implements DatabaseDAO {
     }
 
     @Override
-    public List<Database> findAll() throws DbException {
+    public List<Database> findAll(int ownerId) throws DbException {
         List<Database> databaseList = new ArrayList<>();
         Statement st = null;
         ResultSet rs = null;
 
-        String sql = "SELECT * FROM pg_database";
-
         try {
+
+            String sql = "SELECT * FROM pg_database WHERE datdba = " + ownerId;
+
             st = conn.createStatement();
             rs = st.executeQuery(sql);
 
             while (rs.next()) {
                 String dbName = rs.getString("datname");
-                int ownerId = rs.getInt("oid");
-
                 databaseList.add(new Database(dbName, ownerId));
             }
             return databaseList;

@@ -6,9 +6,15 @@ import java.util.Objects;
 public class User implements Serializable {
 
     private final String  username;
-    private final int     userId;
     private final boolean createDb;
     private       String  password;
+    private       int     userId;
+
+    public User(String username, boolean createDb, String password) {
+        this.username = username;
+        this.createDb = createDb;
+        this.password = password;
+    }
 
     public User(String username, int userId, boolean createDb) {
         this.username = username;
@@ -25,6 +31,10 @@ public class User implements Serializable {
 
     public String getUsername() {
         return username;
+    }
+
+    public int getUserId() {
+        return userId;
     }
 
     public String isCreateDb() {

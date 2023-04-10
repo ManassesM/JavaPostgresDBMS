@@ -9,16 +9,24 @@ import static org.manadev.db.Utils.loadProperties;
 
 public class DB {
 
-    private static Connection conn;
+    static         Properties props = loadProperties();
+    private static Connection conn  = null;
 
-    public static Connection getConnection() {
+    private DB() {}
+
+    public static Connection getExistingConnection() {
+        if (conn == null) {
+            String user = props.getProperty("DB_USER");
+            String pw = props.getProperty("DB_PASSWORD");
+
+            getConnection("", user, pw);
+        }
         return conn;
     }
 
-    public static Connection getConnection(String url, String user, String password) throws DbException {
+    public static Connection getConnection(String dbName, String user, String password) throws DbException {
         try {
-            Properties props = loadProperties();
-
+            String url = props.getProperty("DB_URL") + ((dbName.isBlank()) ? "postgres" : dbName);
             props.setProperty("user", user);
             props.setProperty("password", password);
 
@@ -26,7 +34,6 @@ public class DB {
         } catch (SQLException e) {
             throw new DbException(e.getMessage());
         }
-
         return conn;
     }
 }

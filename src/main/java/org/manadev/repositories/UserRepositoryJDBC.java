@@ -14,8 +14,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-import static org.manadev.db.Utils.loadProperties;
-
 public class UserRepositoryJDBC implements UserDAO {
 
     private final Connection conn;
@@ -53,6 +51,35 @@ public class UserRepositoryJDBC implements UserDAO {
     }
 
     @Override
+    public User findById(int userId) throws DbException {
+        User user;
+        Statement st = null;
+        ResultSet rs = null;
+
+        try {
+            String sql = "SELECT * FROM pg_user WHERE usesysid = " + userId;
+
+
+            st = conn.createStatement();
+            rs = st.executeQuery(sql);
+
+            if (!rs.next()) throw new DbException("No user found for this id: '" + userId + "'");
+            String username = rs.getString("usename");
+            int id = rs.getInt("usesysid");
+            boolean createDb = rs.getBoolean("usecreatedb");
+
+            user = new User(username, id, createDb);
+
+        } catch (SQLException e) {
+            throw new DbException(e.getMessage());
+        } finally {
+            Utils.closeStatement(st);
+            Utils.closeResultSet(rs);
+        }
+        return user;
+    }
+
+    @Override
     public void createUser(User obj) throws DbException {
         String sql = "CREATE ROLE " + obj.getUsername() + " WITH LOGIN NOSUPERUSER NOINHERIT " + obj.isCreateDb() + " NOCREATEROLE NOREPLICATION PASSWORD '" + obj.getPassword() + "'";
         Statement st = null;
@@ -69,8 +96,6 @@ public class UserRepositoryJDBC implements UserDAO {
 
     @Override
     public void connect(String username, String password) throws DbException {
-        Properties props = loadProperties();
-
-        DB.getConnection(props.getProperty("DB_URL") + "postgres", username, password);
+        DB.getConnection("", username, password);
     }
 }

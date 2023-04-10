@@ -5,18 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cbc9975e-e40d-4b2e-bbf5-cc7149bb8f53" name="Changes" comment="connect user">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/manadev/model/dao/DatabaseDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/manadev/model/entities/Database.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/manadev/prompt/DatabasePrompt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/manadev/repositories/DatabaseRepositoryJDBC.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/manadev/services/DatabaseService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/manadev/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manadev/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/manadev/db/DB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manadev/db/DB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/manadev/model/dao/DAOFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manadev/model/dao/DAOFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/manadev/model/dao/DatabaseDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manadev/model/dao/DatabaseDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/manadev/model/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manadev/model/dao/UserDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/manadev/model/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manadev/model/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/manadev/prompt/Start.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manadev/prompt/StartPrompt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/manadev/prompt/DatabasePrompt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manadev/prompt/DatabasePrompt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/manadev/prompt/StartPrompt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manadev/prompt/StartPrompt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/manadev/repositories/DatabaseRepositoryJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manadev/repositories/DatabaseRepositoryJDBC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/manadev/repositories/UserRepositoryJDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manadev/repositories/UserRepositoryJDBC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/manadev/services/DatabaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manadev/services/DatabaseService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/manadev/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manadev/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/manadev/utils/InputFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manadev/utils/InputFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/manadev/utils/StringFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/manadev/utils/StringFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -183,5 +184,70 @@
     <MESSAGE value="create user" />
     <MESSAGE value="connect user" />
     <option name="LAST_COMMIT_MESSAGE" value="connect user" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/manadev/repositories/DatabaseRepositoryJDBC.java</url>
+          <line>23</line>
+          <properties class="org.manadev.repositories.DatabaseRepositoryJDBC" method="findAll">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/manadev/services/DatabaseService.java</url>
+          <line>23</line>
+          <properties class="org.manadev.services.DatabaseService" method="listAll">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/manadev/services/UserService.java</url>
+          <line>69</line>
+          <properties class="org.manadev.services.UserService" method="connect">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/manadev/model/dao/DAOFactory.java</url>
+          <line>11</line>
+          <properties class="org.manadev.model.dao.DAOFactory" method="createUserDAO">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/manadev/model/dao/DAOFactory.java</url>
+          <line>15</line>
+          <properties class="org.manadev.model.dao.DAOFactory" method="createDatabaseDAO">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/manadev/db/DB.java</url>
+          <line>26</line>
+          <properties class="org.manadev.db.DB" method="getConnection">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/manadev/repositories/UserRepositoryJDBC.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

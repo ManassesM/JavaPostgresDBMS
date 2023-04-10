@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface DatabaseDAO {
 
-    List<Database> findAll() throws DbException;
+    List<Database> findAll(int ownerId) throws DbException;
 
     void createDatabase(Database db) throws DbException;
 

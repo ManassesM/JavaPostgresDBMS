@@ -4,18 +4,16 @@ import org.manadev.db.DB;
 import org.manadev.repositories.DatabaseRepositoryJDBC;
 import org.manadev.repositories.UserRepositoryJDBC;
 
-import java.util.Properties;
-
-import static org.manadev.db.Utils.loadProperties;
+import java.sql.Connection;
 
 public class DAOFactory {
+    static Connection conn = DB.getExistingConnection();
 
     public static UserDAO createUserDAO() {
-        Properties props = loadProperties();
-        return new UserRepositoryJDBC(DB.getConnection(props.getProperty("DB_URL"), props.getProperty("DB_USER"), props.getProperty("DB_PASSWORD")));
+        return new UserRepositoryJDBC(conn);
     }
 
     public static DatabaseDAO createDatabaseDAO() {
-        return new DatabaseRepositoryJDBC(DB.getConnection());
+        return new DatabaseRepositoryJDBC(conn);
     }
 }
