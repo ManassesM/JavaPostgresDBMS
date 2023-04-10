@@ -12,7 +12,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Properties;
 
 public class UserRepositoryJDBC implements UserDAO {
 
@@ -58,7 +57,6 @@ public class UserRepositoryJDBC implements UserDAO {
 
         try {
             String sql = "SELECT * FROM pg_user WHERE usesysid = " + userId;
-
 
             st = conn.createStatement();
             rs = st.executeQuery(sql);

@@ -24,7 +24,7 @@ public class DB {
         return conn;
     }
 
-    public static Connection getConnection(String dbName, String user, String password) throws DbException {
+    public static void getConnection(String dbName, String user, String password) throws DbException {
         try {
             String url = props.getProperty("DB_URL") + ((dbName.isBlank()) ? "postgres" : dbName);
             props.setProperty("user", user);
@@ -34,6 +34,5 @@ public class DB {
         } catch (SQLException e) {
             throw new DbException(e.getMessage());
         }
-        return conn;
     }
 }

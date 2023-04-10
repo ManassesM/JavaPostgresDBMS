@@ -14,7 +14,9 @@ public class InputFactory {
 
             try {
                 String input = sc.nextLine();
-                if (input.equals("quit prompt")) throw new InputMismatchException("Returning...");
+                if (input.equals("quit prompt") || input.length() > 255)
+                    throw new InputMismatchException("Returning...");
+
                 return castType(type, input);
             } catch (InputMismatchException e) {
                 throw new InputMismatchException(e.getMessage());

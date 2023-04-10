@@ -13,6 +13,7 @@ import java.sql.SQLException;
 import java.util.InputMismatchException;
 import java.util.List;
 
+import static org.manadev.db.Utils.getOwnerId;
 import static org.manadev.utils.InputFactory.getInputValue;
 import static org.manadev.utils.StringFactory.printValue;
 
@@ -20,22 +21,12 @@ public class DatabaseService {
 
     DatabaseDAO databaseDAO = DAOFactory.createDatabaseDAO();
     UserDAO     userDAO     = DAOFactory.createUserDAO();
+    Connection  connection  = DB.getExistingConnection();
 
     public void listAll() {
 
         try {
-            Connection connection = DB.getExistingConnection();
-
-            String username = connection.getMetaData().getUserName();
-            List<User> users = userDAO.findAll();
-            int ownerId = 0;
-            for (User user : users) {
-                if (user.getUsername().contains(username)) {
-                    ownerId = user.getUserId();
-                }
-            }
-
-            List<Database> databaseList = databaseDAO.findAll(ownerId);
+            List<Database> databaseList = databaseDAO.findAllByOwner(ownerId());
 
             printValue("Databases: ");
             for (Database database : databaseList) {
@@ -52,9 +43,32 @@ public class DatabaseService {
         System.out.println("Quit at any time by typing 'quit prompt'");
 
         try {
+
+            System.out.println("Database name");
             String dbName = getInputValue(String.class);
+            Database database = new Database(dbName, ownerId());
+
+            databaseDAO.createDB(database);
+
         } catch (InputMismatchException e) {
             System.out.println(e.getMessage());
+        } catch (SQLException e) {
+            throw new DbException(e.getMessage());
         }
+    }
+
+    public void dropDatabase() {
+        System.out.println("Database name");
+        String dbName = getInputValue(String.class);
+        databaseDAO.dropDB(dbName);
+    }
+
+    // utils
+
+    private int ownerId() throws SQLException {
+        String username = connection.getMetaData().getUserName();
+        List<User> users = userDAO.findAll();
+
+        return getOwnerId(users, username);
     }
 }
